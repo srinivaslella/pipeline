@@ -3,6 +3,7 @@ node {
  git 'https://github.com/srinivaslella/pipeline.git'
  }
  stage ('Compile-Package'){
-  Sh 'mvn Package'
+  def mvnHome = tool name: 'maven', type: 'maven'
+  Sh "${mvnHome}/bin/mvn Package"
   }
   }
