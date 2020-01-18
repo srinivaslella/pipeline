@@ -1,0 +1,8 @@
+node {
+ stage ('SCM Checkout'){
+ git 'https://github.com/srinivaslella/pipeline.git'
+ }
+ stage ('Compile-Package'){
+  Sh 'mvn Package'
+  }
+  }
